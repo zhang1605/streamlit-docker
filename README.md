@@ -6,11 +6,8 @@ No need to clone the GitHub repo. Just create a new folder with your app (named 
 
 ```Dockerfile
 FROM samdobson/streamlit
-COPY ./streamlit_app.py /usr/src/app
+WORKDIR /usr/src/app
+COPY . .
 ```
 
-Then you can build your image with `docker build -t mystreamlitapp .`
-
-## Deploying to Kubernetes?
-
-Check out https://github.com/samdobson/helm/tree/master/charts/streamlit
+Then you can build your image with `docker build -t acct:rep .`
